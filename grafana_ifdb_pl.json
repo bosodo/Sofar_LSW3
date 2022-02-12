@@ -60,7 +60,7 @@
             "properties": [
               {
                 "id": "unit",
-                "value": "m"
+                "value": "godzin"
               },
               {
                 "id": "decimals",
@@ -122,6 +122,10 @@
               {
                 "id": "unit",
                 "value": "watth"
+              },
+              {
+                "id": "decimals",
+                "value": 3
               },
               {
                 "id": "color",
@@ -229,7 +233,7 @@
           "measurement": "InverterData",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT sum(\"max\") FROM (SELECT max(\"SolarProduction_Today\") FROM \"InverterData\" WHERE time <= now() GROUP BY time(1d) fill(null) tz('Europe/Warsaw'))",
+          "query": "SELECT max(\"SolarProduction_Total\")*1000 FROM \"InverterData\" WHERE $timeFilter fill(null)",
           "rawQuery": true,
           "refId": "D",
           "resultFormat": "time_series",
@@ -237,7 +241,7 @@
             [
               {
                 "params": [
-                  "SolarProduction_Today"
+                  "SolarProduction_Total"
                 ],
                 "type": "field"
               }
