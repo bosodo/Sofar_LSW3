@@ -1,5 +1,5 @@
 # Change Log
-Get Sofart Inverter's data from solarman logger.
+Get Sofar Inverter's data from solarman logger.
 Tested with LSW-3 (SN 17xxxxxxx, 21xxxxxx)
  
 ## [1.0] - 2021-09-22
@@ -128,3 +128,83 @@ Fix version
 
 ### Fixed
 1. Small fix for duplicated quotes for string values in MQTT Domoticz messages.
+
+## [1.66] - 2022-02-22
+Fix version
+
+### Added
+
+### Changed
+
+### Fixed
+1. Reliable messages delivery to MQTT/Domoticz. 
+
+## [1.7] - 2022-02-23
+HomeAssistant support
+
+### Added
+1. Home Assistant support (via MQTT) - code courtesy of @pablolite
+
+### Changed
+1. Minor cleanups.
+
+### Fixed
+## [1.8] - 2022-02-24
+MQTT support (including Domoticz/HomeAssistant) refactored
+
+### Added
+1. Sending inverter's status to MQTT/Domoticz/HomeAssistant when the device is turned off.
+
+### Changed
+1. Basic MQTT message output as a separate option (independent from Domoticz or HomeAssistant support)
+2. Dedicated MQTT topic settings for basic support, Domoticz and HomeAssistant
+3. Additional parameters in config.cfg for above changes
+
+### Fixed
+
+## [1.82] - 2022-02-25
+Fixes, code refactoring and clean-ups
+
+### Added
+1. Logger connecting messages in verbose mode
+
+### Changed
+1. Some code refactoring and unnecesarry parts removal
+
+### Fixed
+1. Sending offline status to MQTT (basic, Domoticz, HomeAssistant)
+
+## [1.83] - 2022-03-01
+Fix
+
+### Added
+
+### Changed
+
+### Fixed
+1. Small fix for potential charmap_decode error (especially in Windows environment)
+
+## [1.84] - 2022-04-29
+Report 0 if logger/inverter is offline
+
+### Added
+
+### Changed
+Now script writes 0 to InfluxDB for all monitored parameters if logger/inverter is offline
+It helps getting more acurate data agregations (i.e. in Grafana)
+
+### Fixed
+
+## [1.9] - 2023-09-21
+Fixes, additional file and debug logging, InfluxDB v2.x support
+
+### Added
+1. Logfile configuration in config.cfg
+2. Additional debug option in config.cfg - enables additional debug info written to a log file
+
+### Changed
+1. InfluxDB support now requires InfluxDB v2.x (instead of 1.x). 
+2. InfluxDB config section in config.cfg to reflect InfluxDB v2.x access requirements
+
+### Fixed
+1. Endless data gathering loop when inverter's status <> 0 (ready), that flooded logger and made it hang. That fixes issue #46

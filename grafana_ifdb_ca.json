@@ -55,7 +55,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Today's working time"
+              "options": "Temps de treball d'avui"
             },
             "properties": [
               {
@@ -71,12 +71,12 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Total working time"
+              "options": "Temps de treball total"
             },
             "properties": [
               {
                 "id": "unit",
-                "value": "hours"
+                "value": "hores"
               },
               {
                 "id": "color",
@@ -93,7 +93,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Today's production"
+              "options": "Producció d'avui"
             },
             "properties": [
               {
@@ -116,7 +116,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Total production"
+              "options": "Producció total"
             },
             "properties": [
               {
@@ -135,7 +135,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Current power"
+              "options": "Potència actual"
             },
             "properties": [
               {
@@ -174,7 +174,7 @@
       "pluginVersion": "8.2.1",
       "targets": [
         {
-          "alias": "Today's production",
+          "alias": "Producció d'avui",
           "groupBy": [
             {
               "params": [
@@ -210,7 +210,7 @@
           "tags": []
         },
         {
-          "alias": "Total production",
+          "alias": "Producció total",
           "groupBy": [
             {
               "params": [
@@ -246,7 +246,7 @@
           "tags": []
         },
         {
-          "alias": "Current power",
+          "alias": "Potència actual",
           "groupBy": [
             {
               "params": [
@@ -282,7 +282,7 @@
           "tags": []
         },
         {
-          "alias": "Today's working time",
+          "alias": "Temps de treball d'avui",
           "groupBy": [
             {
               "params": [
@@ -317,7 +317,7 @@
           "tags": []
         },
         {
-          "alias": "Total working time",
+          "alias": "Temps de treball total",
           "groupBy": [
             {
               "params": [
@@ -353,7 +353,7 @@
           "tags": []
         }
       ],
-      "title": "PV panels statistics",
+      "title": "Estadístiques dels panells fotovoltaics",
       "transparent": true,
       "type": "stat"
     },
@@ -395,7 +395,7 @@
               "mode": "off"
             }
           },
-          "displayName": "Power",
+          "displayName": "Potència",
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -416,7 +416,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Power"
+              "options": "Potència"
             },
             "properties": [
               {
@@ -457,7 +457,7 @@
       },
       "targets": [
         {
-          "alias": "Power",
+          "alias": "Potència",
           "groupBy": [
             {
               "params": [
@@ -494,7 +494,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Power",
+      "title": "Potència",
       "type": "timeseries"
     },
     {
@@ -674,7 +674,7 @@
           "tags": []
         }
       ],
-      "title": "Output voltage",
+      "title": "Voltatge de sortida",
       "type": "timeseries"
     },
     {
@@ -713,7 +713,7 @@
               "mode": "off"
             }
           },
-          "displayName": "Production",
+          "displayName": "Producció",
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -734,7 +734,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Production"
+              "options": "Producció"
             },
             "properties": [
               {
@@ -775,7 +775,7 @@
       "pluginVersion": "8.1.5",
       "targets": [
         {
-          "alias": "Production",
+          "alias": "Producció",
           "groupBy": [
             {
               "params": [
@@ -810,7 +810,7 @@
           "tags": []
         }
       ],
-      "title": "Today's production",
+      "title": "Producció d'avui",
       "type": "timeseries"
     },
     {
@@ -822,7 +822,7 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisLabel": "Generated energy",
+            "axisLabel": "Energia generada",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "bars",
@@ -850,7 +850,7 @@
             }
           },
           "decimals": 2,
-          "displayName": "Production",
+          "displayName": "Producció",
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -871,7 +871,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Production"
+              "options": "Producció"
             },
             "properties": [
               {
@@ -908,7 +908,7 @@
       },
       "targets": [
         {
-          "alias": "Production",
+          "alias": "Producció",
           "groupBy": [
             {
               "params": [
@@ -951,7 +951,7 @@
       ],
       "timeFrom": "now-30d",
       "timeShift": null,
-      "title": "Daily production",
+      "title": "Producció diària",
       "type": "timeseries"
     },
     {
@@ -963,7 +963,7 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisLabel": "Gerated energy",
+            "axisLabel": "Energia generada",
             "axisPlacement": "auto",
             "axisSoftMin": 0,
             "barAlignment": 0,
@@ -992,7 +992,7 @@
             }
           },
           "decimals": 2,
-          "displayName": "Production",
+          "displayName": "Producció",
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -1013,7 +1013,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Production"
+              "options": "Producció"
             },
             "properties": [
               {
@@ -1048,7 +1048,7 @@
       },
       "targets": [
         {
-          "alias": "Production",
+          "alias": "Producció",
           "groupBy": [
             {
               "params": [
@@ -1091,7 +1091,7 @@
       ],
       "timeFrom": "now-1y",
       "timeShift": null,
-      "title": "Monthly production",
+      "title": "Producció mensual",
       "type": "timeseries"
     },
     {
@@ -1188,7 +1188,7 @@
       },
       "targets": [
         {
-          "alias": "Daily working time",
+          "alias": "Temps de treball diari",
           "groupBy": [
             {
               "params": [
@@ -1225,7 +1225,7 @@
       ],
       "timeFrom": "2M",
       "timeShift": null,
-      "title": "Daily working time",
+      "title": "Temps de treball diari",
       "type": "timeseries"
     },
     {
@@ -1390,7 +1390,7 @@
       ],
       "timeFrom": "now-1y",
       "timeShift": null,
-      "title": "Max output voltage",
+      "title": "Màxim voltatge de sortida",
       "type": "timeseries"
     },
     {
@@ -1465,7 +1465,7 @@
               },
               {
                 "id": "displayName",
-                "value": "PV1 (A)"
+                "value": "FV1 (A)"
               }
             ]
           },
@@ -1481,7 +1481,7 @@
               },
               {
                 "id": "displayName",
-                "value": "PV2 (A)"
+                "value": "FV2 (A)"
               }
             ]
           },
@@ -1500,7 +1500,7 @@
               },
               {
                 "id": "displayName",
-                "value": "PV2 (V)"
+                "value": "FV2 (V)"
               }
             ]
           },
@@ -1512,7 +1512,7 @@
             "properties": [
               {
                 "id": "displayName",
-                "value": "PV1 (V)"
+                "value": "FV1 (V)"
               }
             ]
           }
@@ -1626,7 +1626,7 @@
           "tags": []
         }
       ],
-      "title": "String's parameters (voltage, current)",
+      "title": "Voltatge i intensitat de la línia fotovoltaica",
       "type": "timeseries"
     },
     {
@@ -1697,7 +1697,7 @@
               },
               {
                 "id": "displayName",
-                "value": "Inverter"
+                "value": "Inversor"
               }
             ]
           },
@@ -1709,7 +1709,7 @@
             "properties": [
               {
                 "id": "displayName",
-                "value": "Module"
+                "value": "Mòdul"
               },
               {
                 "id": "color",
@@ -1787,7 +1787,7 @@
           "tags": []
         }
       ],
-      "title": "Inverter's temperature",
+      "title": "Temperatura de l'inversor",
       "type": "timeseries"
     }
   ],
@@ -1805,8 +1805,8 @@
   "timepicker": {
     "nowDelay": ""
   },
-  "timezone": "Europe/Warsaw",
-  "title": "PV Monitor",
+  "timezone": "Europe/Andorra",
+  "title": "Monitor fotovoltaic",
   "uid": "53xh9vgAB",
   "version": 9
 }
