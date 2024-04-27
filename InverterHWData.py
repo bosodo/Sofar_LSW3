@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # Script gathering product data from Sofar Solar Inverter (K-TLX) via logger module LSW-3/LSE
 # by Michalux
-
+import argparse
 import sys
 import socket
 import binascii
@@ -23,19 +23,32 @@ def hex_zfill(intval):
 os.chdir(os.path.dirname(sys.argv[0]))
 
 # CONFIG
-configParser = configparser.RawConfigParser()
-configFilePath = r'./config.cfg'
-configParser.read(configFilePath)
+config = configparser.RawConfigParser()
+configFilePath = r'./config.ini'
+config.read(configFilePath)
 
-inverter_ip = configParser.get('SofarInverter', 'inverter_ip')
-inverter_port = int(configParser.get('SofarInverter', 'inverter_port'))
-inverter_sn = int(configParser.get('SofarInverter', 'inverter_sn'))
-reg_start = (int(configParser.get('SofarInverter', 'registerhw_start'),
+# you can override settings from the default configuration file with 'config-custom.cfg' file
+if os.path.exists('config-custom.ini'):
+    config.read('config-custom.ini')
+
+# and you can override config values from file provided as argument
+parser = argparse.ArgumentParser()
+parser.add_argument("-c", "--config_file", type=str, help='Config file')
+args = parser.parse_args()
+if args.config_file:
+    config.read(args.config_file)
+
+inverter_ip = config.get('SofarInverter', 'inverter_ip')
+inverter_port = int(config.get('SofarInverter', 'inverter_port'))
+inverter_sn = int(config.get('SofarInverter', 'inverter_sn'))
+reg_start = (int(config.get('SofarInverter', 'registerhw_start'),
                  0))  # Starting modbus register address (from ModBus-RTU Communication Protocol doc)
-reg_end = (int(configParser.get('SofarInverter', 'registerhw_end'),
+reg_end = (int(config.get('SofarInverter', 'registerhw_end'),
                0))  # End modbus register address (from ModBus-RTU Communication Protocol doc)
-lang = configParser.get('SofarInverter', 'lang')
-verbose = configParser.get('SofarInverter', 'verbose')
+lang = config.get('SofarInverter', 'lang')
+verbose = config.get('SofarInverter', 'verbose')
+prometheus = config.get('Prometheus', 'prometheus')
+prometheus_file = config.get('Prometheus', 'prometheus_file')
 # END CONFIG
 
 # PREPARE & SEND DATA TO INVERTER via LOGGER MODULE
@@ -100,8 +113,8 @@ for res in socket.getaddrinfo(inverter_ip, inverter_port, socket.AF_INET, socket
 # SEND DATA
 clientSocket.sendall(frame_bytes)
 
-ok = False;
-while (not ok):
+ok = False
+while not ok:
     try:
         data = clientSocket.recv(1024)
         ok = True
