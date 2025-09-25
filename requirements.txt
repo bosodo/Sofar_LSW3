@@ -1,4 +1,3 @@
 influxdb-client
-libscrc==1.8.1
 paho-mqtt==2.0.0
-libscrc
+libscrc==1.8.1
